@@ -1,0 +1,1 @@
+netstat -nr | grep -A 2 Internet: | grep default | awk '{if ($1 == "default") print $2;}'
