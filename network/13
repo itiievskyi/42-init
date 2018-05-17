@@ -1,0 +1,3 @@
+DHCP
+
+# cat /Library/Preferences/SystemConfiguration/preferences.plist | grep -A 3 IPv4 | grep "<string>"

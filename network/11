@@ -1,0 +1,7 @@
+Network Address Translation (NAT), IP = 10.113.254.254
+
+# https://whatismyipaddress.com/nat
+#
+# "The most common form of network translation involves a large private network
+# using addresses in a private range (10.0.0.0 to 10.255.255.255,
+# 172.16.0.0 to 172.31.255.255, or 192.168.0 0 to 192.168.255.255)."
