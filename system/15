@@ -1,0 +1,5 @@
+pkill tail
+
+# or any other process (pkill <name>)
+# or kill $! - terminates the last process
+# or kill $(jobs -p)

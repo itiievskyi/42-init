@@ -1,0 +1,5 @@
+du -b /var/*
+
+# man du
+# -b is for the exact size in bytes
+# remove -b and add -h flag for human-readable format

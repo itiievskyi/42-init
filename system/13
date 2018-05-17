@@ -1,0 +1,4 @@
+ps -aux
+
+# equivalent of 'ps aux' under the normal circumstances
+# you can also use 'top' command

@@ -1,0 +1,4 @@
+df -h
+
+# only available space on devices:
+# df -h --output=source,avail,target
