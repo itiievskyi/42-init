@@ -1,3 +1,1 @@
 hostname newhostname
-
-# or modify /etc/hostname and run "/etc/init.d/hostname.sh start"
