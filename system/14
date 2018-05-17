@@ -2,5 +2,5 @@ tail -f /var/log/syslog &
 
 # '&' runs the process in background
 # to check whether it works properly run the command 'tail -f /var/log/syslog'
-# WITHOUT '&' and then promt 'bg'. 
+# WITHOUT '&' and then prompt 'bg'.
 # You should get a message about that the process is already in background
