@@ -1,0 +1,4 @@
+sudo iptables -L
+
+# man iptables
+# -L = list [chain]
