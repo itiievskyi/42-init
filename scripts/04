@@ -1,19 +1,22 @@
 echo "CRON_1=/etc/crontab" > ~/crontab_alert
 echo "CRON_0=/etc/crontab_old" >> ~/crontab_alert
 echo "\n" >> ~/crontab_alert
-echo "if [ ! -e $CRON_0 ]; then" >> ~/crontab_alert
+echo "if [ ! -e \$CRON_0 ]; then" >> ~/crontab_alert
 echo `	echo "Backup does not exist"` >> ~/crontab_alert
-echo "	sudo cp $CRON_1 $CRON_0" >> ~/crontab_alert
+echo "	sudo cp \$CRON_1 \$CRON_0" >> ~/crontab_alert
 echo "	exit 0" >> ~/crontab_alert
 echo "fi" >> ~/crontab_alert
 echo "\n" >> ~/crontab_alert
 
-echo "MD5_1=\`md5sum $CRON_1 | awk \'{ print $1 }\'\`" >> ~/crontab_alert
-echo "MD5_0=`md5sum $CRON_0 | awk '{ print $1 }'`" >> ~/crontab_alert
+echo "MD5_1=\`md5sum \$CRON_1 | awk '{ print $1 }'\`" >> ~/crontab_alert
+echo "MD5_0=\`md5sum \$CRON_0 | awk '{ print $1 }'\`" >> ~/crontab_alert
 
 echo "\n" >> ~/crontab_alert
-echo "if [ "$MD5_1" != "$MD5_0" ]; then" >> ~/crontab_alert
-echo `"	echo "Hello, root! Our crontab file has been modified" | mail -s "Crontab Alert" root"` >> ~/crontab_alert
+echo "if [ \"\$MD5_1\" != \"\$MD5_0\" ]; then" >> ~/crontab_alert
+echo "	echo \"Hello, root! Our crontab file has been modified\" | mail -s \"Crontab Alert\" root" >> ~/crontab_alert
 echo "fi" >> ~/crontab_alert
 echo "\n" >> ~/crontab_alert
-echo "sudo cp $CRON_1 $CRON_0" >> ~/crontab_alert
+echo "sudo cp \$CRON_1 \$CRON_0" >> ~/crontab_alert
+
+chmod 755 ~/crontab_alert
+echo "@midnight sh ~/crontab_alert" | crontab
